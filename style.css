@@ -1,101 +1,110 @@
+/* استيراد خطوط مخصصة */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap');
+
 /* تصميم متجاوب */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: 'Tajawal', sans-serif;
+  background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
   color: #333;
   text-align: center;
-  padding: 20px;
   margin: 0;
-  overflow-x: hidden;
+  padding: 0;
 }
 
-.page {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.container {
+  max-width: 90%;
+  margin: 50px auto;
 }
 
-.page:not(.hidden) {
-  display: flex;
+/* تأثير الكتابة الديناميكية */
+.animated-title {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
 
-.hidden {
-  display: none;
+.stroke-text {
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: 2px #007bff; /* خط أزرق */
+  animation: draw-stroke 2s ease-in-out forwards;
 }
 
-h1 {
-  color: #007bff;
-  font-size: 2rem;
-  margin-bottom: 20px;
+.gradient-text {
+  background: linear-gradient(135deg, #007bff, #00c4ff); /* أزرق متدرج */
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: pulse 2s infinite alternate;
 }
 
-button {
-  padding: 15px 30px;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px;
-  width: 80%;
-  max-width: 300px;
+/* تأثير رسم الخط */
+@keyframes draw-stroke {
+  from {
+    -webkit-text-stroke-color: transparent;
+  }
+  to {
+    -webkit-text-stroke-color: #007bff;
+  }
 }
 
-button:hover {
-  background-color: #0056b3;
+/* تأثير الوميض */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 
-#levelsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  gap: 10px;
+/* تصميم الجدول */
+table {
+  width: 100%;
+  border-collapse: collapse;
   margin: 20px auto;
-  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
 }
 
-.level {
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  background-color: #ccc;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.level.locked {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
-.level.unlocked {
-  background-color: #007bff;
-  cursor: pointer;
-}
-
-#optionsContainer button {
-  display: block;
-  width: 80%;
-  margin: 10px auto;
+th, td {
   padding: 15px;
   font-size: 1rem;
-  background-color: #007bff;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
-  border: none;
-  border-radius: 5px;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+td i {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.point-cell {
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-#optionsContainer button:hover {
-  background-color: #0056b3;
+.point-cell:focus {
+  background-color: #e0f7fa; /* لون عند تعديل النقاط */
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.trophy {
-  width: 100px;
-  height: 100px;
-  margin: 20px auto;
+/* تأثير عند تعديل النقاط */
+.point-cell:hover {
+  background-color: #f0f8ff;
 }

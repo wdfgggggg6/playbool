@@ -2,56 +2,94 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <title>اختبر ذكائك</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نقاطي</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
+  <script src="https://kit.fontawesome.com/your-fontawesome-key.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- الصفحة الرئيسية -->
-  <div id="homePage" class="page">
-    <h1>اختبر ذكائك</h1>
-    <button id="startGame">العب</button>
-    <button id="settings">إعدادات</button>
-    <button id="about">عن اللعبة</button>
-  </div>
+  <div class="container">
+    <!-- عنوان التطبيق مع تأثير الرسم -->
+    <h1 class="animated-title">
+      <span class="stroke-text">تطبيق</span>
+      <span class="gradient-text">نقاطي</span>
+    </h1>
 
-  <!-- صفحة المراحل -->
-  <div id="levelsPage" class="page hidden">
-    <h1>المراحل</h1>
-    <div id="levelsContainer"></div>
-    <button id="backToHome">العودة إلى الصفحة الرئيسية</button>
-  </div>
-
-  <!-- صفحة اللعبة -->
-  <div id="gamePage" class="page hidden">
-    <h1>المرحلة <span id="currentLevelNumber"></span></h1>
-    <p id="question"></p>
-    <div id="optionsContainer"></div>
-    <p id="feedback"></p>
-    <p id="attempts">محاولات متبقية: <span id="remainingAttempts">3</span></p>
-    <button id="backToLevels" class="hidden">العودة إلى المراحل</button>
-  </div>
-
-  <!-- صفحة الخسارة -->
-  <div id="losePage" class="page hidden">
-    <h1>لقد خسرت!</h1>
-    <button id="tryAgain">حاول مرة أخرى</button>
-  </div>
-
-  <!-- صفحة الفوز -->
-  <div id="winPage" class="page hidden">
-    <h1>تهانينا! لقد فزت</h1>
-    <img src="trophy.png" alt="كأس" class="trophy">
-    <button id="nextSeason">اذهب إلى الموسم الثاني</button>
-  </div>
-
-  <!-- صفحة الموسم الثاني -->
-  <div id="seasonTwoPage" class="page hidden">
-    <h1>الموسم الثاني</h1>
-    <p>قريبًا...</p>
+    <table id="pointsTable">
+      <thead>
+        <tr>
+          <th><i class="fas fa-calendar-day"></i> اليوم</th>
+          <th><i class="fas fa-star"></i> النقاط</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- إضافة 17 صفًا لأيام الأسبوع -->
+        <tr>
+          <td><i class="fas fa-sun"></i> السبت</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-sun"></i> الأحد</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-moon"></i> الإثنين</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-moon"></i> الثلاثاء</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-cloud"></i> الأربعاء</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-cloud"></i> الخميس</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-star"></i> الجمعة</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-sun"></i> السبت</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-sun"></i> الأحد</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-moon"></i> الإثنين</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-moon"></i> الثلاثاء</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-cloud"></i> الأربعاء</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-cloud"></i> الخميس</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-star"></i> الجمعة</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-sun"></i> السبت</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-sun"></i> الأحد</td>
+          <td contenteditable="true" class="point-cell">0</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <script src="script.js"></script>
